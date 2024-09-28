@@ -63,6 +63,18 @@ export default function Projects() {
           />
           <h3 className="text-lg font-semibold text-center mt-4">Candlestick chart and bubble charts in react d3js</h3>
         </div>
+
+        <div 
+          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
+          onClick={() => handleImageClick('/images/projects/voicrunch-in-Laravel-AI-speech-recognition.png')}
+        >
+          <img 
+            src="/images/projects/voicrunch-in-Laravel-AI-speech-recognition.png" 
+            alt="Voicrunch in Laravel, AI, speech recognition" 
+            className="w-full h-64 object-cover" 
+          />
+          <h3 className="text-lg font-semibold text-center mt-4">Voicrunch in Laravel, AI, speech recognition</h3>
+        </div>
       </div>
 
       {/* Modal */}
