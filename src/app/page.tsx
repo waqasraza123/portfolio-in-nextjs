@@ -8,20 +8,20 @@ import Hero from '../components/HeroSection';
 import Video from '@/components/VideoSection';
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Waqas | Full-Stack Engineer</title>
-      </Head>
-      <Header />
-      <Hero />
-      <Video />
-      <main>
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-    </>
-  );
+    return (
+        <>
+            <Head>
+                <title>Waqas | Full-Stack Engineer</title>
+            </Head>
+            <Header />
+            <Hero />
+            <Video />
+            <main>
+                <Projects />
+                <About />
+                <Skills />
+                <Contact />
+            </main>
+        </>
+    );
 }
