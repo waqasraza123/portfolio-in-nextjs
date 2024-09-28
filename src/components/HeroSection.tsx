@@ -8,18 +8,30 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="relative z-10 text-center">
-        {/* Big Words */}
+        {/* Introductory Text */}
         <h1 className="text-6xl md:text-8xl font-extrabold mb-4 tracking-tight animate-fade-in">
-          Welcome to <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 animate-text-gradient">
-            Innovation
-          </span>
+          I&apos;M <span className="text-blue-500">WAQAS</span>
+          <img
+            src="/images/waqas-raza-upwork.jpg"
+            alt="Profile"
+            className="w-20 h-20 object-cover rounded-full border-4 border-white shadow-lg inline-block ml-4 animate-fade-in"
+          />
+          <span className="text-blue-500"> R.</span>
         </h1>
 
-        {/* Sub-heading */}
-        <p className="text-lg md:text-2xl text-gray-600 mt-4 opacity-90 animate-fade-in delay-200">
-          A place where creativity meets technology.
-        </p> 
+        <h2 className="text-5xl md:text-7xl font-extrabold mb-4 animate-fade-in">
+          <span className="text-black">FULL STACK</span>
+          <img
+            src="/images/attention-to-details.jpg"
+            alt="Eye"
+            className="w-40 h-20 object-cover rounded-full shadow-lg inline-block ml-4 animate-fade-in delay-300"
+          />
+          <span className="text-blue-500"> WEB</span>
+        </h2>
+
+        <h3 className="text-5xl md:text-7xl font-extrabold animate-fade-in">
+          DEVELOPER
+        </h3>
 
         {/* Call-to-Action */}
         <div className="mt-10 animate-fade-in delay-700">
