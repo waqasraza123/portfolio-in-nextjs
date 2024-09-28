@@ -70,7 +70,7 @@ export default function Projects() {
         ].map((project, index) => (
           <div 
             key={index}
-            className="relative group rounded-lg overflow-hidden transition-shadow duration-300 ease-in-out shadow-xl hover:shadow-2xl bg-white p-6 cursor-pointer"
+            className="relative group rounded-lg overflow-hidden transition-shadow duration-300 ease-in-out shadow-xl hover:shadow-2xl bg-white p-6 cursor-pointer mb-8" // Added mb-8 for vertical margin
             onClick={() => handleImageClick(project.src)}
           >
             <img 
