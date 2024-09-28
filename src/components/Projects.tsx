@@ -75,6 +75,66 @@ export default function Projects() {
           />
           <h3 className="text-lg font-semibold text-center mt-4">Voicrunch in Laravel, AI, speech recognition</h3>
         </div>
+
+        <div 
+          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
+          onClick={() => handleImageClick('/images/projects/sign-in-react-page.png')}
+        >
+          <img 
+            src="/images/projects/sign-in-react-page.png" 
+            alt="React Auth Page" 
+            className="w-full h-64 object-cover" 
+          />
+          <h3 className="text-lg font-semibold text-center mt-4">React Auth Page</h3>
+        </div>
+
+        <div 
+          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
+          onClick={() => handleImageClick('/images/projects/laravel-livewire-social-app.png')}
+        >
+          <img 
+            src="/images/projects/laravel-livewire-social-app.png" 
+            alt="Laravel Livewire Social App" 
+            className="w-full h-64 object-cover" 
+          />
+          <h3 className="text-lg font-semibold text-center mt-4">Laravel Livewire Social App</h3>
+        </div>
+
+        <div 
+          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
+          onClick={() => handleImageClick('/images/projects/laravel-admin-panel-for-travel-ecommerce.png')}
+        >
+          <img 
+            src="/images/projects/laravel-admin-panel-for-travel-ecommerce.png" 
+            alt="Laravel Admin Dashboard for Travel Ecommerce" 
+            className="w-full h-64 object-cover" 
+          />
+          <h3 className="text-lg font-semibold text-center mt-4">Laravel Admin Dashboard for Travel Ecommerce</h3>
+        </div>
+
+        <div 
+          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
+          onClick={() => handleImageClick('/images/projects/laravel-admin-panel-for-eCommerce-store.png')}
+        >
+          <img 
+            src="/images/projects/laravel-admin-panel-for-eCommerce-store.png" 
+            alt="Laravel admin panel for eCommerce Store" 
+            className="w-full h-64 object-cover" 
+          />
+          <h3 className="text-lg font-semibold text-center mt-4">Laravel admin panel for eCommerce Store</h3>
+        </div>
+
+        <div 
+          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
+          onClick={() => handleImageClick('/images/projects/react-app.png')}
+        >
+          <img 
+            src="/images/projects/react-app.png" 
+            alt="React App" 
+            className="w-full h-64 object-cover" 
+          />
+          <h3 className="text-lg font-semibold text-center mt-4">React App</h3>
+        </div>
       </div>
 
       {/* Modal */}
