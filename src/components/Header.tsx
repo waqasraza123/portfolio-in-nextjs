@@ -17,11 +17,11 @@ export default function Header() {
           <Link href="#about" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
             About
           </Link>
-          <Link href="#skills" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-            Skills
-          </Link>
           <Link href="#projects" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
             Projects
+          </Link>
+          <Link href="#testimonials" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
+            Testimonials
           </Link>
           <Link href="#contact" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
             Contact
@@ -66,13 +66,13 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="#skills" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-                Skills
+              <Link href="#projects" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
+                Projects
               </Link>
             </li>
             <li>
-              <Link href="#projects" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-                Projects
+              <Link href="#testimonials" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
+                Testimonials
               </Link>
             </li>
             <li>
@@ -86,4 +86,3 @@ export default function Header() {
     </header>
   );
 }
-
