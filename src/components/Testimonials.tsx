@@ -1,7 +1,7 @@
 export default function TestimonialsTimeline() {
     const testimonials = [
         {
-          text: "Waqas was instrumental in helping us build our application. He's a key piece of our team and was skilled in various ways in helping to ensure we took the proper steps. Would recommend to others who are looking for a skilled developer to assist.",
+          text: "Waqas was instrumental in helping us build our application. He is a key piece of our team and was skilled in various ways in helping to ensure we took the proper steps. Would recommend to others who are looking for a skilled developer to assist.",
           type: "Full Stack Associate Developer",
           client: "Bryan Fields",
         },
@@ -16,23 +16,23 @@ export default function TestimonialsTimeline() {
           client: "Avery Arasin",
         },
         {
-          text: "5 Stars",
+          text: "5 stars",
           type: "Looking for a PHP expert",
           client: "James Gilbert",
         },
         {
           text: "Waqas did a great job on the custom API integrations and custom WP plugin that we needed. I appreciated his honesty, clean code, and good work ethic. He will definitely be considered for future work.",
-          type: "Wordpress & API Integrations",
+          type: "WordPress & API Integrations",
           client: "Samantha Johnston",
         },
         {
-          text: "He went above and beyond and even did some work on the project that I didn’t request. A very pleasant experience and I have hired him to do further work for me.",
+          text: "He went above and beyond and even did some work on the project that I did not request. A very pleasant experience and I have hired him to do further work for me.",
           type: "Developer needed for modification of Open Source Laravel Project",
           client: "Tay Zombulovich",
         },
         {
           text: "5 stars",
-          type: "Experience LARAVEL Developer",
+          type: "Experience Laravel Developer",
           client: "Sergio Gonzalez",
         },
         {
@@ -62,11 +62,11 @@ export default function TestimonialsTimeline() {
         },
         {
           text: "5 stars",
-          type: "Build API & Simple Reporting Module (PHP Laravel Spark Application)",
+          type: "Build API & Simple Reporting Module - PHP Laravel Spark Application",
           client: "VoiceCrunch",
         },
         {
-          text: "Very Professional, Will Hire Again 5 stars",
+          text: "Very professional, will hire again 5 stars",
           type: "Need a CTO for a startup",
           client: "Javier",
         },
@@ -91,7 +91,7 @@ export default function TestimonialsTimeline() {
           client: "Aaron",
         },
         {
-          text: "Waqas is a brilliant young man who I’m excited to work with in my next job.",
+          text: "Waqas is a brilliant young man who I am excited to work with in my next job.",
           type: "PHP developer with Codeigniter experience",
           client: "Inbox India",
         },
