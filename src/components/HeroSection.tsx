@@ -19,10 +19,10 @@ export default function Hero() {
         {/* Sub-heading */}
         <p className="text-lg md:text-2xl text-gray-600 mt-4 opacity-90 animate-fade-in delay-200">
           A place where creativity meets technology.
-        </p>
+        </p> 
 
         {/* Call-to-Action */}
-        <div className="mt-10 animate-fade-in delay-500">
+        <div className="mt-10 animate-fade-in delay-700">
           <button className="px-8 py-3 font-semibold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 transition ease-in-out duration-300">
             Discover More
           </button>

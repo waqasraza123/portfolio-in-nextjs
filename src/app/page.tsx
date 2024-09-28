@@ -5,6 +5,7 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Hero from '../components/HeroSection';
+import Video from '@/components/VideoSection';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       </Head>
       <Header />
       <Hero />
+      <Video />
       <main>
         <About />
         <Skills />
