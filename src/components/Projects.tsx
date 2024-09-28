@@ -13,128 +13,74 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-16 bg-white text-gray-800">
-      <h2 className="text-4xl font-bold text-center mb-12">Projects Feed</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 cursor-pointer">
-        <div 
-          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
-          onClick={() => handleImageClick('/images/projects/Laravel-and-Socket-io-Music-Sharing-and-Chat-app.png')}
-        >
-          <img 
-            src="/images/projects/Laravel-and-Socket-io-Music-Sharing-and-Chat-app.png" 
-            alt="Laravel and Socket-io Music Sharing and Chat app" 
-            className="w-full h-64 object-cover" 
-          />
-          <h3 className="text-lg font-semibold text-center mt-4">Laravel and Socket-io Music Sharing and Chat app</h3>
-        </div>
-
-        <div 
-          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
-          onClick={() => handleImageClick('/images/projects/react-app-with-data-visualization.png')}
-        >
-          <img 
-            src="/images/projects/react-app-with-data-visualization.png" 
-            alt="React App with Charts" 
-            className="w-full h-64 object-cover" 
-          />
-          <h3 className="text-lg font-semibold text-center mt-4">React App with Charts</h3>
-        </div>
-
-        <div 
-          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
-          onClick={() => handleImageClick('/images/projects/react-charts.jpg')}
-        >
-          <img 
-            src="/images/projects/react-charts.jpg" 
-            alt="React Charts - ChartsJs" 
-            className="w-full h-64 object-cover" 
-          />
-          <h3 className="text-lg font-semibold text-center mt-4">React Charts - ChartsJs</h3>
-        </div>
-
-        <div 
-          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
-          onClick={() => handleImageClick('/images/projects/candlestick-chart-and-bubble-charts-in-react-d3js.png')}
-        >
-          <img 
-            src="/images/projects/candlestick-chart-and-bubble-charts-in-react-d3js.png" 
-            alt="Candlestick chart and bubble charts in react d3js" 
-            className="w-full h-64 object-cover" 
-          />
-          <h3 className="text-lg font-semibold text-center mt-4">Candlestick chart and bubble charts in react d3js</h3>
-        </div>
-
-        <div 
-          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
-          onClick={() => handleImageClick('/images/projects/voicrunch-in-Laravel-AI-speech-recognition.png')}
-        >
-          <img 
-            src="/images/projects/voicrunch-in-Laravel-AI-speech-recognition.png" 
-            alt="Voicrunch in Laravel, AI, speech recognition" 
-            className="w-full h-64 object-cover" 
-          />
-          <h3 className="text-lg font-semibold text-center mt-4">Voicrunch in Laravel, AI, speech recognition</h3>
-        </div>
-
-        <div 
-          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
-          onClick={() => handleImageClick('/images/projects/sign-in-react-page.png')}
-        >
-          <img 
-            src="/images/projects/sign-in-react-page.png" 
-            alt="React Auth Page" 
-            className="w-full h-64 object-cover" 
-          />
-          <h3 className="text-lg font-semibold text-center mt-4">React Auth Page</h3>
-        </div>
-
-        <div 
-          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
-          onClick={() => handleImageClick('/images/projects/laravel-livewire-social-app.png')}
-        >
-          <img 
-            src="/images/projects/laravel-livewire-social-app.png" 
-            alt="Laravel Livewire Social App" 
-            className="w-full h-64 object-cover" 
-          />
-          <h3 className="text-lg font-semibold text-center mt-4">Laravel Livewire Social App</h3>
-        </div>
-
-        <div 
-          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
-          onClick={() => handleImageClick('/images/projects/laravel-admin-panel-for-travel-ecommerce.png')}
-        >
-          <img 
-            src="/images/projects/laravel-admin-panel-for-travel-ecommerce.png" 
-            alt="Laravel Admin Dashboard for Travel Ecommerce" 
-            className="w-full h-64 object-cover" 
-          />
-          <h3 className="text-lg font-semibold text-center mt-4">Laravel Admin Dashboard for Travel Ecommerce</h3>
-        </div>
-
-        <div 
-          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
-          onClick={() => handleImageClick('/images/projects/laravel-admin-panel-for-eCommerce-store.png')}
-        >
-          <img 
-            src="/images/projects/laravel-admin-panel-for-eCommerce-store.png" 
-            alt="Laravel admin panel for eCommerce Store" 
-            className="w-full h-64 object-cover" 
-          />
-          <h3 className="text-lg font-semibold text-center mt-4">Laravel admin panel for eCommerce Store</h3>
-        </div>
-
-        <div 
-          className="project-item relative rounded-lg overflow-hidden shadow-lg" 
-          onClick={() => handleImageClick('/images/projects/react-app.png')}
-        >
-          <img 
-            src="/images/projects/react-app.png" 
-            alt="React App" 
-            className="w-full h-64 object-cover" 
-          />
-          <h3 className="text-lg font-semibold text-center mt-4">React App</h3>
-        </div>
+    <section id="projects" className="py-20 bg-gray-100 text-gray-900">
+      <h2 className="text-5xl font-bold text-center mb-16">Projects Feed</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 px-6">
+        {[
+          {
+            title: 'Laravel and Socket-io Music Sharing and Chat app',
+            src: '/images/projects/Laravel-and-Socket-io-Music-Sharing-and-Chat-app.png',
+            alt: 'Laravel and Socket-io Music Sharing and Chat app'
+          },
+          {
+            title: 'React App with Charts',
+            src: '/images/projects/react-app-with-data-visualization.png',
+            alt: 'React App with Charts'
+          },
+          {
+            title: 'React Charts - ChartsJs',
+            src: '/images/projects/react-charts.jpg',
+            alt: 'React Charts - ChartsJs'
+          },
+          {
+            title: 'Candlestick chart and bubble charts in React D3.js',
+            src: '/images/projects/candlestick-chart-and-bubble-charts-in-react-d3js.png',
+            alt: 'Candlestick chart and bubble charts in React D3.js'
+          },
+          {
+            title: 'Voicrunch in Laravel, AI, speech recognition',
+            src: '/images/projects/voicrunch-in-Laravel-AI-speech-recognition.png',
+            alt: 'Voicrunch in Laravel, AI, speech recognition'
+          },
+          {
+            title: 'React Auth Page',
+            src: '/images/projects/sign-in-react-page.png',
+            alt: 'React Auth Page'
+          },
+          {
+            title: 'Laravel Livewire Social App',
+            src: '/images/projects/laravel-livewire-social-app.png',
+            alt: 'Laravel Livewire Social App'
+          },
+          {
+            title: 'Laravel Admin Dashboard for Travel Ecommerce',
+            src: '/images/projects/laravel-admin-panel-for-travel-ecommerce.png',
+            alt: 'Laravel Admin Dashboard for Travel Ecommerce'
+          },
+          {
+            title: 'Laravel Admin Panel for eCommerce Store',
+            src: '/images/projects/laravel-admin-panel-for-eCommerce-store.png',
+            alt: 'Laravel Admin Panel for eCommerce Store'
+          },
+          {
+            title: 'React App',
+            src: '/images/projects/react-app.png',
+            alt: 'React App'
+          }
+        ].map((project, index) => (
+          <div 
+            key={index}
+            className="relative group rounded-lg overflow-hidden transition-shadow duration-300 ease-in-out shadow-xl hover:shadow-2xl bg-white p-6 cursor-pointer"
+            onClick={() => handleImageClick(project.src)}
+          >
+            <img 
+              src={project.src} 
+              alt={project.alt} 
+              className="w-full h-48 object-cover rounded-md transition-transform duration-300 group-hover:scale-105" 
+            />
+            <h3 className="text-xl font-semibold text-center mt-6">{project.title}</h3>
+          </div>
+        ))}
       </div>
 
       {/* Modal */}
