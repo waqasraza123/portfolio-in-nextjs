@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image'; // Import Image from next/image
 import Modal from './Modal';
 
 export default function Projects() {
@@ -73,9 +74,11 @@ export default function Projects() {
             className="relative group rounded-lg overflow-hidden transition-shadow duration-300 ease-in-out shadow-xl hover:shadow-2xl bg-white p-6 cursor-pointer mb-8" // Added mb-8 for vertical margin
             onClick={() => handleImageClick(project.src)}
           >
-            <img 
+            <Image 
               src={project.src} 
               alt={project.alt} 
+              width={500} // Adjust width according to your design
+              height={300} // Adjust height according to your design
               className="w-full h-48 object-cover rounded-md transition-transform duration-300 group-hover:scale-105" 
             />
             <h3 className="text-xl font-semibold text-center mt-6">{project.title}</h3>
