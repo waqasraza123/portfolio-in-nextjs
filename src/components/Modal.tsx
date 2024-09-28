@@ -15,7 +15,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, imageSrc }) => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
             <div className="relative">
                 <button 
-                    className="absolute top-0 right-0 p-2 text-white"
+                    className="absolute top-2 right-2 text-red-500 text-xl"
                     onClick={onClose}
                     >
                     &times;
