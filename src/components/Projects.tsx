@@ -77,8 +77,8 @@ export default function Projects() {
             <Image 
               src={project.src} 
               alt={project.alt} 
-              width={500} // Adjust width according to your design
-              height={300} // Adjust height according to your design
+              width={500}
+              height={300}
               className="w-full h-48 object-cover rounded-md transition-transform duration-300 group-hover:scale-105" 
             />
             <h3 className="text-xl font-semibold text-center mt-6">{project.title}</h3>
