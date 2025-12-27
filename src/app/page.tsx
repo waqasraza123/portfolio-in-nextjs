@@ -4,7 +4,6 @@ import About from '../components/About';
 import Testimonials from '../components/Testimonials';
 import Projects from '../components/Projects';
 import Hero from '../components/HeroSection';
-import Video from '@/components/VideoSection';
 
 export default function Home() {
     return (
@@ -14,7 +13,6 @@ export default function Home() {
             </Head>
             <Header />
             <Hero />
-            <Video />
             <main>
                 <Projects />
                 <Testimonials />
