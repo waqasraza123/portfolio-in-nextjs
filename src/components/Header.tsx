@@ -6,26 +6,33 @@ import { useState } from 'react';
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
+  const navLinks = [
+    { href: "#skills", label: "Skills" },
+    { href: "#case-studies", label: "Case Studies" },
+    { href: "#how-i-work", label: "How I Work" },
+    { href: "#testimonials", label: "Testimonials" },
+    { href: "#about", label: "About" },
+  ];
+
   return (
     <header className="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-lg shadow-md z-50">
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-gray-800">Waqas</h1>
+        <h1 className="text-2xl font-bold text-gray-800">
+          Waqas<span className="text-blue-600">.</span>
+        </h1>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-8">
-          <Link href="#about" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-            About
-          </Link>
-          <Link href="#projects" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-            Projects
-          </Link>
-          <Link href="#testimonials" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-            Testimonials
-          </Link>
-          <Link href="#contact" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-            Contact
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-gray-600 hover:text-blue-600 transition ease-in-out duration-200 font-medium"
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         {/* Mobile Nav Toggle */}
@@ -60,26 +67,17 @@ export default function Header() {
       {isNavOpen && (
         <nav className="md:hidden bg-white bg-opacity-95 shadow-md py-4">
           <ul className="space-y-4 text-center">
-            <li>
-              <Link href="#about" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="#projects" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="#testimonials" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-                Testimonials
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" className="text-gray-600 hover:text-gray-800 transition ease-in-out duration-200">
-                Contact
-              </Link>
-            </li>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={() => setIsNavOpen(false)}
+                  className="text-gray-600 hover:text-blue-600 transition ease-in-out duration-200 font-medium"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       )}
