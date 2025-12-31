@@ -10,7 +10,6 @@ export default function Header() {
     { href: "#skills", label: "Skills" },
     { href: "#case-studies", label: "Case Studies" },
     { href: "#how-i-work", label: "How I Work" },
-    { href: "#testimonials", label: "Testimonials" },
     { href: "#about", label: "About" },
   ];
 
