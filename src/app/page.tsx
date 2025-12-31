@@ -4,7 +4,6 @@ import Hero from '../components/HeroSection';
 import Skills from '../components/Skills';
 import CaseStudies from '../components/CaseStudies';
 import HowIWork from '../components/HowIWork';
-import Testimonials from '../components/Testimonials';
 import About from '../components/About';
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
                 <Skills />
                 <CaseStudies />
                 <HowIWork />
-                <Testimonials />
                 <About />
             </main>
         </>
