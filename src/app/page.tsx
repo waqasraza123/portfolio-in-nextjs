@@ -10,8 +10,8 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Waqas R. | Senior Full-Stack Developer + AI Prompt Engineer</title>
-                <meta name="description" content="Senior Full-Stack Developer with 10+ years experience in React, Node.js, Python & AI. $100K+ earned, 175 jobs, 100% Job Success on Upwork." />
+                <title>Waqas R. | Full-Stack AI Product Engineer | RAG, Agents, Node, Python</title>
+                <meta name="description" content="Full-Stack AI Product Engineer. I build RAG/LLM apps that don't hallucinate, don't leak secrets, and don't break under load. Top Rated, 100% JSS, $100K+ earned." />
             </Head>
             <Header />
             <Hero />

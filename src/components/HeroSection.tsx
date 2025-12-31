@@ -8,6 +8,28 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="relative z-10 text-center py-16 px-6 max-w-5xl mx-auto">
+        
+        {/* New Year Sprint Drop Banner */}
+        <div className="mb-8 animate-pulse-slow">
+          <div className="inline-block bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 p-[2px] rounded-2xl">
+            <div className="bg-white rounded-2xl px-6 py-4">
+              <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4">
+                <span className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Limited Slots
+                </span>
+                <div className="text-center md:text-left">
+                  <p className="text-gray-900 font-bold text-sm md:text-base">
+                    New Year Sprint Drop <span className="text-gray-500 font-normal">(ends Jan 25, 2026)</span>
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    100+ hour projects only. Pay 50 hours worth → get up to 100 hours of delivery.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
           <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
@@ -16,17 +38,18 @@ export default function Hero() {
 
         {/* Main Title */}
         <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-          Senior <span className="text-blue-600">Full-Stack</span> Developer
+          Full-Stack <span className="text-blue-600">AI Product</span> Engineer
           <br />
-          <span className="text-gray-600">+ AI Prompt Engineer</span>
+          <span className="text-2xl md:text-3xl text-gray-600 font-semibold">
+            RAG • Agents • Node.js • Python
+          </span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-          10+ years building <span className="font-semibold text-gray-800">React</span>,{" "}
-          <span className="font-semibold text-gray-800">Node.js</span>,{" "}
-          <span className="font-semibold text-gray-800">Python</span> &{" "}
-          <span className="font-semibold text-gray-800">AI-powered</span> applications
+          I build <span className="font-semibold text-gray-800">RAG/LLM apps</span> that don&apos;t hallucinate, 
+          don&apos;t leak secrets, and don&apos;t break under load.{" "}
+          <span className="font-semibold text-gray-800">End-to-end:</span> backend, AI, Stripe, deployment.
         </p>
 
         {/* Stats */}
