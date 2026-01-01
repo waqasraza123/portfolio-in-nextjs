@@ -9,24 +9,11 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 text-center py-16 px-6 max-w-5xl mx-auto">
         
-        {/* New Year Sprint Drop Banner */}
-        <div className="mb-8 animate-pulse-slow">
-          <div className="inline-block bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 p-[2px] rounded-2xl">
-            <div className="bg-white rounded-2xl px-6 py-4">
-              <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4">
-                <span className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                  Limited Slots
-                </span>
-                <div className="text-center md:text-left">
-                  <p className="text-gray-900 font-bold text-sm md:text-base">
-                    New Year Sprint Drop <span className="text-gray-500 font-normal">(ends Jan 25, 2026)</span>
-                  </p>
-                  <p className="text-gray-600 text-sm">
-                    100+ hour projects only. Pay 50 hours worth → get up to 100 hours of delivery.
-                  </p>
-                </div>
-              </div>
-            </div>
+        {/* Hourly Rate */}
+        <div className="mb-8">
+          <div className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-2xl shadow-lg">
+            <span className="text-2xl md:text-3xl font-bold">$30</span>
+            <span className="text-lg md:text-xl font-medium">/hour</span>
           </div>
         </div>
 
