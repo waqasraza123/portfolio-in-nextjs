@@ -68,14 +68,27 @@ export default function About() {
 
             <div className="bg-white rounded-3xl p-8 shadow-sm">
               <h3 className="text-xl font-bold text-gray-800 mb-4">💼 Experience</h3>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div>
                   <div className="font-semibold text-gray-900">Full-Stack AI Product Engineer</div>
-                  <div className="text-gray-600 text-sm">Upwork • 2013 - Present</div>
+                  <div className="text-gray-600 text-sm mb-1">Upwork • 2013 - Present</div>
+                  <div className="text-gray-500 text-sm leading-relaxed">
+                    delivering complex AI/web solutions for global clients.
+                  </div>
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Software Engineer</div>
-                  <div className="text-gray-600 text-sm">Delivery Hero Berlin • 2020 - 2021</div>
+                  <div className="text-gray-600 text-sm mb-1">Delivery Hero Berlin • 2020 - 2021</div>
+                  <div className="text-gray-500 text-sm leading-relaxed">
+                    Backend development for global food delivery platforms.
+                  </div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">CTO & Lead Developer</div>
+                  <div className="text-gray-600 text-sm mb-1">Hello Demo (EU Startup) • 2018 - 2020</div>
+                  <div className="text-gray-500 text-sm leading-relaxed">
+                    Built audio processing MVP, hired/managed remote dev team, and led technical strategy from zero to successful launch.
+                  </div>
                 </div>
               </div>
             </div>
