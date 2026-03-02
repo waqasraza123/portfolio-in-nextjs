@@ -26,12 +26,14 @@ const geistMono = localFont({
 // 10. Node.js AI Developer
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://waqas-raza.vercel.app'),
+  metadataBase: new URL("https://waqas-raza.vercel.app"),
   title: {
-    default: "Waqas R. | Full-Stack AI Product Engineer | RAG, Agents, Node.js, Python",
-    template: "%s | Waqas R. - AI Product Engineer"
+    default:
+      "Waqas R. | Full-Stack AI Product Engineer | RAG, Agents, Node.js, Python",
+    template: "%s | Waqas R. - AI Product Engineer",
   },
-  description: "Full-Stack AI Product Engineer specializing in RAG/LLM apps, AI agents, and production-grade AI integrations. Expert in OpenAI API, LangChain, Node.js, Python. Top Rated on Upwork with 100% Job Success, $100K+ earned. Hire for AI chatbot development, LLM integration, and AI automation.",
+  description:
+    "Full-Stack AI Product Engineer specializing in RAG/LLM apps, AI agents, and production-grade AI integrations. Expert in OpenAI API, LangChain, Node.js, Python. Top Rated on Upwork with 100% Job Success, $170K+ earned. Hire for AI chatbot development, LLM integration, and AI automation.",
   keywords: [
     "AI Product Engineer",
     "RAG Developer",
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
     "Freelance AI Engineer",
     "AI Integration Specialist",
     "GPT Developer",
-    "Vector Database Expert"
+    "Vector Database Expert",
   ],
   authors: [{ name: "Waqas Raza", url: "https://waqas-raza.vercel.app" }],
   creator: "Waqas Raza",
@@ -58,9 +60,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   openGraph: {
@@ -68,8 +70,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://waqas-raza.vercel.app",
     siteName: "Waqas Raza - AI Product Engineer",
-    title: "Waqas R. | Full-Stack AI Product Engineer | RAG, Agents, Node.js, Python",
-    description: "I build RAG/LLM apps that don't hallucinate, don't leak secrets, and don't break under load. Top Rated Upwork freelancer with 100% Job Success.",
+    title:
+      "Waqas R. | Full-Stack AI Product Engineer | RAG, Agents, Node.js, Python",
+    description:
+      "I build RAG/LLM apps that don't hallucinate, don't leak secrets, and don't break under load. Top Rated Upwork freelancer with 100% Job Success.",
     images: [
       {
         url: "/og-image.png",
@@ -81,8 +85,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Waqas R. | Full-Stack AI Product Engineer | RAG, Agents, Node.js, Python",
-    description: "I build RAG/LLM apps that don't hallucinate, don't leak secrets, and don't break under load. Top Rated on Upwork.",
+    title:
+      "Waqas R. | Full-Stack AI Product Engineer | RAG, Agents, Node.js, Python",
+    description:
+      "I build RAG/LLM apps that don't hallucinate, don't leak secrets, and don't break under load. Top Rated on Upwork.",
     images: ["/og-image.png"],
     creator: "@waqasraza123",
   },
@@ -104,11 +110,12 @@ export default function RootLayout({
     name: "Waqas Raza",
     url: "https://waqas-raza.vercel.app",
     jobTitle: "Full-Stack AI Product Engineer",
-    description: "Full-Stack AI Product Engineer specializing in RAG/LLM apps, AI agents, and production-grade AI integrations. Expert in OpenAI API, LangChain, Node.js, Python.",
+    description:
+      "Full-Stack AI Product Engineer specializing in RAG/LLM apps, AI agents, and production-grade AI integrations. Expert in OpenAI API, LangChain, Node.js, Python.",
     sameAs: [
       "https://github.com/waqasraza123",
       "https://www.upwork.com/freelancers/waqasraza",
-      "https://stackoverflow.com/users/waqasraza"
+      "https://stackoverflow.com/users/waqasraza",
     ],
     knowsAbout: [
       "RAG Development",
@@ -122,16 +129,16 @@ export default function RootLayout({
       "React",
       "Next.js",
       "Stripe Integration",
-      "Full Stack Development"
+      "Full Stack Development",
     ],
     alumniOf: {
       "@type": "EducationalOrganization",
-      name: "National University of Sciences and Technology"
+      name: "National University of Sciences and Technology",
     },
     worksFor: {
       "@type": "Organization",
-      name: "Freelance / Upwork"
-    }
+      name: "Freelance / Upwork",
+    },
   };
 
   return (
@@ -143,8 +150,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}>
         {children}
       </body>
     </html>
