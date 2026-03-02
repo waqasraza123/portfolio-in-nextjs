@@ -43,9 +43,9 @@ export default function Hero() {
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-gray-900">
-              10M+
+              6700+
             </div>
-            <div className="text-gray-500 text-sm">Records Ingested</div>
+            <div className="text-gray-500 text-sm">Hours Worked</div>
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-green-600">
