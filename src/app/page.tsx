@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Hero from '../components/HeroSection';
 import Skills from '../components/Skills';
 import CaseStudies from '../components/CaseStudies';
+import WorkHistory from '../components/WorkHistory';
 import HowIWork from '../components/HowIWork';
 import About from '../components/About';
 
@@ -13,6 +14,7 @@ export default function Home() {
             <main role="main">
                 <Skills />
                 <CaseStudies />
+                <WorkHistory />
                 <HowIWork />
                 <About />
             </main>
