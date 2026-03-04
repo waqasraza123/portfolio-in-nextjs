@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="relative z-10 text-center py-16 px-6 max-w-5xl mx-auto">
         <div className="mb-8 flex flex-col items-center gap-3">
           <div className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-2xl shadow-lg">
-            <span className="text-2xl md:text-3xl font-bold">$30</span>
+            <span className="text-2xl md:text-3xl font-bold">$20-$30</span>
             <span className="text-lg md:text-xl font-medium">/hour</span>
           </div>
 
@@ -22,7 +22,7 @@ export default function Hero() {
           AI-First <span className="text-blue-600">Developer</span>
           <br />
           <span className="text-2xl md:text-3xl text-gray-600 font-semibold">
-            Claude Code Expert • CTO • Saving Costs with AI
+            Stripe, LLMs, AI Automation, GenAI
           </span>
         </h1>
 
