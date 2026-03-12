@@ -1,4 +1,3 @@
-import Header from '../components/Header';
 import Hero from '../components/HeroSection';
 import Skills from '../components/Skills';
 import CaseStudies from '../components/CaseStudies';
@@ -9,7 +8,6 @@ import About from '../components/About';
 export default function Home() {
     return (
         <>
-            <Header />
             <Hero />
             <main role="main">
                 <Skills />

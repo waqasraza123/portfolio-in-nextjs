@@ -83,7 +83,7 @@ export default function Hero() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section className="relative flex flex-col justify-center items-center mt-16 bg-white text-gray-800 overflow-hidden">
+    <section className="relative flex flex-col justify-center items-center bg-white text-gray-800 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100" />
 
       <div className="relative z-10 text-center py-16 px-6 max-w-5xl mx-auto">
