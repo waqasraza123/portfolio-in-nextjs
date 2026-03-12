@@ -4,8 +4,8 @@ import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const HeroProductScene = dynamic(
-  () => import("./HeroProductScene"),
+const HeroCodeToUiScene = dynamic(
+  () => import("./HeroCodeToUiScene"),
   { ssr: false }
 );
 
@@ -109,7 +109,7 @@ export default function Hero() {
           product delivery
         </p>
 
-        <HeroProductScene />
+        <HeroCodeToUiScene />
 
         <div className="flex flex-wrap justify-center gap-8 mb-10">
           {PROOF_STATS.map((stat) => (

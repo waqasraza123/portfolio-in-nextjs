@@ -1,4 +1,7 @@
+"use client";
+
 import { RAW_UPWORK_HISTORY } from "../data/upwork-history";
+import { useEffect, useRef, useState } from "react";
 
 type UpworkProject = {
   title: string;
@@ -169,6 +172,29 @@ const SUMMARY = summarize(ALL_PROJECTS);
 const { map: PROJECTS_BY_YEAR, years: YEARS } = groupByYear(ALL_PROJECTS);
 
 export default function WorkHistory() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReduced) {
+      setRevealed(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) setRevealed(true);
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -80px 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const stats = [
     {
       label: "Total Upwork earnings",
@@ -177,22 +203,83 @@ export default function WorkHistory() {
         SUMMARY.fromYear && SUMMARY.toYear
           ? `${SUMMARY.fromYear}–${SUMMARY.toYear}`
           : undefined,
+      gradient: "from-emerald-500 to-teal-500",
+      icon: (
+        <svg
+          className="w-5 h-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 1v22" />
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6" />
+        </svg>
+      ),
     },
     {
       label: "Projects delivered",
       value: `${SUMMARY.projectCount}`,
       sub: `${SUMMARY.fixedCount} fixed • ${SUMMARY.hourlyCount} hourly`,
+      gradient: "from-sky-500 to-blue-600",
+      icon: (
+        <svg
+          className="w-5 h-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M3 7h18" />
+          <path d="M7 3v18" />
+          <path d="M17 3v18" />
+          <path d="M3 17h18" />
+        </svg>
+      ),
     },
     {
       label: "Hours billed",
       value: `${formatHours(SUMMARY.totalHours)}+`,
       sub: "hourly contracts only",
+      gradient: "from-violet-500 to-fuchsia-500",
+      icon: (
+        <svg
+          className="w-5 h-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 6v6l4 2" />
+          <path d="M22 12a10 10 0 1 1-10-10 10 10 0 0 1 10 10Z" />
+        </svg>
+      ),
     },
     {
       label: "Client satisfaction",
       value:
         SUMMARY.avgRating == null ? "—" : `${SUMMARY.avgRating.toFixed(2)}/5`,
       sub: `${SUMMARY.ratedCount} rated contracts`,
+      gradient: "from-amber-500 to-orange-500",
+      icon: (
+        <svg
+          className="w-5 h-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+      ),
     },
   ];
 
@@ -269,25 +356,45 @@ export default function WorkHistory() {
   ];
 
   return (
-    <section id="work-history" className="py-20 bg-gray-50">
+    <section
+      id="work-history"
+      ref={sectionRef}
+      className="py-20 bg-gradient-to-b from-white to-gray-50/80"
+    >
       <div className="container mx-auto px-6">
-        <h2 className="text-5xl font-extrabold text-center text-gray-900 mb-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-3">
           Upwork Work History
         </h2>
-        <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-600 text-center mb-14 max-w-3xl mx-auto">
           Full Upwork contract history with year-by-year breakdown across
           payments, SaaS platforms, mobile apps, and modern AI integrations.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+          {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-6 text-center">
-              <div className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">
+              className={`work-card rounded-2xl border border-gray-200/80 bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-6 ${
+                revealed ? "revealed" : "opacity-0"
+              }`}
+              style={revealed ? { animationDelay: `${index * 80}ms` } : undefined}
+            >
+              <div className="flex items-center justify-between mb-3">
+                <div
+                  className={`w-10 h-10 rounded-xl bg-gradient-to-br ${stat.gradient} text-white flex items-center justify-center shadow-sm`}
+                >
+                  {stat.icon}
+                </div>
+                <div className="text-xs font-semibold text-gray-500">
+                  Upwork
+                </div>
+              </div>
+              <div className="text-3xl font-extrabold text-gray-900 mb-1">
                 {stat.value}
               </div>
-              <div className="text-sm text-gray-600">{stat.label}</div>
+              <div className="text-sm font-semibold text-gray-700">
+                {stat.label}
+              </div>
               {stat.sub ? (
                 <div className="text-xs text-gray-500 mt-1">{stat.sub}</div>
               ) : null}
@@ -307,10 +414,18 @@ export default function WorkHistory() {
             </p>
 
             <div className="space-y-6">
-              {recentHighlights.map((block) => (
+              {recentHighlights.map((block, idx) => (
                 <div
                   key={block.title}
-                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                  className={`work-card rounded-2xl border border-gray-200/80 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 ${
+                    revealed ? "revealed" : "opacity-0"
+                  }`}
+                  style={
+                    revealed
+                      ? { animationDelay: `${(stats.length + idx) * 80}ms` }
+                      : undefined
+                  }
+                >
                   <div className="flex items-center justify-between mb-2">
                     <h4 className="text-lg font-semibold text-gray-900">
                       {block.title}
@@ -328,7 +443,7 @@ export default function WorkHistory() {
                     {block.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100">
+                        className="px-2.5 py-1 bg-gray-50 text-gray-700 text-xs font-semibold rounded-full border border-gray-200 hover:border-gray-300 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -349,10 +464,20 @@ export default function WorkHistory() {
             </p>
 
             <div className="space-y-6">
-              {longTermClients.map((client) => (
+              {longTermClients.map((client, idx) => (
                 <div
                   key={client.title}
-                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                  className={`work-card rounded-2xl border border-gray-200/80 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 ${
+                    revealed ? "revealed" : "opacity-0"
+                  }`}
+                  style={
+                    revealed
+                      ? {
+                          animationDelay: `${(stats.length + recentHighlights.length + idx) * 80}ms`,
+                        }
+                      : undefined
+                  }
+                >
                   <div className="flex items-center justify-between mb-1">
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900">
@@ -413,7 +538,7 @@ export default function WorkHistory() {
                 <details
                   key={yearKey}
                   open={openByDefault}
-                  className="bg-white rounded-2xl shadow-sm border border-gray-100">
+                  className="bg-white rounded-2xl shadow-sm border border-gray-200/80">
                   <summary className="cursor-pointer select-none px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <div className="flex items-center gap-3">
                       <span className="text-lg font-semibold text-gray-900">
@@ -424,17 +549,17 @@ export default function WorkHistory() {
                       </span>
                     </div>
                     <div className="flex flex-wrap gap-2 text-xs">
-                      <span className="px-2.5 py-1 rounded-full bg-gray-50 text-gray-700 border border-gray-100">
+                      <span className="px-2.5 py-1 rounded-full bg-gray-50 text-gray-700 border border-gray-200">
                         {formatUSDCompactPlus(yearEarnings)}
                       </span>
-                      <span className="px-2.5 py-1 rounded-full bg-gray-50 text-gray-700 border border-gray-100">
+                      <span className="px-2.5 py-1 rounded-full bg-gray-50 text-gray-700 border border-gray-200">
                         {formatHours(yearHours)} hrs
                       </span>
                     </div>
                   </summary>
 
                   <div className="px-6 pb-6">
-                    <div className="overflow-x-auto rounded-xl border border-gray-100">
+                    <div className="overflow-x-auto rounded-xl border border-gray-200/80">
                       <table className="min-w-full text-sm">
                         <thead className="bg-gray-50 text-gray-600">
                           <tr>
