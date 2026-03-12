@@ -5,6 +5,68 @@ import { useEffect, useRef, useState } from "react";
 export default function CaseStudies() {
   const caseStudies = [
     {
+      title: "VoiceCrunch AI",
+      subtitle: "Speech Analytics Platform",
+      description:
+        "AI-powered speech analytics platform that scans recorded calls for keywords, phrases, sentiment and conversational patterns, then transcribes and translates key moments.",
+      outcomes: [
+        "90% less time spent reviewing calls",
+        "40+ smart criteria across sentiment, silence and talk dynamics",
+        "Flexible monthly and PAYG pricing for call analysis",
+      ],
+      features: [
+        "Search recorded calls for words, phrases, silences, overtalk, sentiment and talk-style changes.",
+        "Automatic transcription and translation of key moments into target languages.",
+        "Email alerts and dashboards for compliance, CX, sales and risk signals.",
+        "Silence, overtalk, volume and pacing analysis for coaching and QA.",
+        "Flexible ingestion from existing call recorders, Zoom and legacy systems with secure, transient processing.",
+      ],
+      tech: ["Speech-to-text", "NLP", "Sentiment", "Dashboards"],
+      gradient: "from-sky-500 to-indigo-600",
+    },
+    {
+      title: "Deep Research Agent",
+      subtitle: "Python + LangChain + LangGraph",
+      description:
+        "Production-grade deep research agent that plans, fetches, and writes structured reports from URLs and documents with strict guardrails.",
+      outcomes: [
+        "Deterministic, reproducible research runs",
+        "URL + document ingestion (HTML, PDF, DOCX, TXT, MD, CSV)",
+        "Traceable artifacts for every run",
+      ],
+      features: [
+        "Tool-using workflows via LangChain / LangGraph with a Deep Agents-inspired design.",
+        "Fetch pipeline that handles HTML and the top 5 document formats with safe timeouts and size caps.",
+        "Runs produce plan.md, notes.md, sources.json, report.md and normalized source files under runs/<thread_id>/.",
+        "Guardrails: caps on max_sources, max_links_per_source, HTTP/model timeouts, token limits and retries.",
+        "Automatic artifact completion if report.md is missing after a run, using a tool-free model call.",
+      ],
+      tech: ["Python", "LangChain", "LangGraph", "OpenAI", "FastAPI"],
+      gradient: "from-slate-700 to-sky-500",
+      link: "https://github.com/waqasraza123/deep-research-agent-langchain",
+    },
+    {
+      title: "OpenClaw DocOps Agent",
+      subtitle: "Node.js + TypeScript + OpenAI + Qdrant",
+      description:
+        "DocOps automation agent for production-grade document ingestion, grounded Q&A with citations/refusals, and an audit harness for evaluation.",
+      outcomes: [
+        "Deterministic PDF ingestion into Qdrant",
+        "Grounded Q&A with citations and refusal guardrails",
+        "Ops-ready doc lifecycle and diagnostics",
+      ],
+      features: [
+        "Ingestion pipeline that extracts, chunks, embeds and stores PDFs in Qdrant Cloud with deterministic chunk IDs and safe retry behavior.",
+        "Grounded answering layer that returns citations and refuses when context is insufficient instead of hallucinating.",
+        "Audit runner that produces JSON + Markdown reports for repeatable evaluation and iteration.",
+        "Doc lifecycle ops: registry list/get, export/import, rebuild from chunks, and delete that cleans up both chunks and registry state.",
+        "Ops utilities: retrieval debug, diagnostics, redacted config snapshot and cache cleanup CLIs/APIs.",
+      ],
+      tech: ["TypeScript", "Node.js", "OpenAI", "Qdrant", "OpenClaw"],
+      gradient: "from-emerald-600 to-cyan-500",
+      link: "https://github.com/waqasraza123/openclaw-qdrant-openai-docops-agent",
+    },
+    {
       title: "CrimeStats.co.nz",
       subtitle: "Python/FastAPI + Next.js",
       description: "Crime analytics platform for New Zealand with automated police data ingestion and safety scoring.",
