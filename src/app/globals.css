@@ -62,4 +62,28 @@ body {
     background-size: 200% 200%;
     animation: gradientXy 4s ease-in-out infinite;
   }
-  
+
+  /* Hero product scene: subtle float, respect reduced motion */
+  @keyframes heroFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes heroPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+  .hero-scene-card {
+    animation: heroFloat 4s ease-in-out infinite;
+  }
+  .hero-scene-card-2 { animation-delay: 0.5s; }
+  .hero-scene-card-3 { animation-delay: 1s; }
+  .hero-scene-pulse {
+    animation: heroPulse 2s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-scene-card,
+    .hero-scene-pulse {
+      animation: none !important;
+    }
+  }
+
