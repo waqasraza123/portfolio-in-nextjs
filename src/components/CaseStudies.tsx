@@ -67,6 +67,26 @@ export default function CaseStudies() {
       link: "https://github.com/waqasraza123/openclaw-qdrant-openai-docops-agent",
     },
     {
+      title: "AI-Powered Video Editing Pipeline",
+      subtitle: "Python + Remotion · VO → YouTube",
+      description:
+        "Takes a single voiceover audio file (and optional script) and produces a fully edited YouTube video at professional quality. Target format: VO + B-roll documentary style (Johnny Harris, Veritasium, ColdFusion). Handles 10 minutes to 1 hour.",
+      outcomes: [
+        "Dual-stack: Python (WhisperX, LLM, asset sourcing) + Remotion (React/TS) for rendering",
+        "EDL JSON pivot format connecting intelligence and compositing",
+        "Animated subtitles, overlays, transitions, audio ducking, -14 LUFS",
+      ],
+      features: [
+        "WhisperX transcription + LLM analysis → EDL JSON v3; optional text script for accuracy.",
+        "Asset sourcing (Pexels/Pixabay) with caching, dedup, and per-segment manifests.",
+        "Remotion: compositing, word-synced subtitles, motion graphics, @remotion/transitions, light leaks.",
+        "FFmpeg: ducking, loudness normalization, final mux. Outputs: final.mp4, edl.json, chapters.txt.",
+        "Professional rules: 3–7s per shot, 90% hard cuts, Hormozi-style subtitles, Ken Burns on B-roll.",
+      ],
+      tech: ["Python", "WhisperX", "LLM", "Remotion", "React", "TypeScript", "FFmpeg", "EDL JSON"],
+      gradient: "from-violet-600 to-fuchsia-500",
+    },
+    {
       title: "CrimeStats.co.nz",
       subtitle: "Python/FastAPI + Next.js",
       description: "Crime analytics platform for New Zealand with automated police data ingestion and safety scoring.",

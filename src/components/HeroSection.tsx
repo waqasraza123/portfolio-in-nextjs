@@ -117,10 +117,10 @@ export default function Hero() {
           Senior Software Engineer
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 mb-2 max-w-3xl mx-auto font-semibold">
-          10+ Years, Building AI Agents, automations, SaaS products
+          10+ Years: Building AI Agents, Automations, SaaS Products
         </p>
         <p className="text-lg md:text-xl text-gray-500 mb-6 max-w-2xl mx-auto">
-          Generative AI, Claude, LLM, Agents, Node.js, Python
+          Generative AI, Claude, Data Pipelines, Full-Stack
         </p>
 
         <HeroCodeToUiScene />

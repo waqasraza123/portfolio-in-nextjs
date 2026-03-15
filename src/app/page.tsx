@@ -1,6 +1,9 @@
+import dynamic from "next/dynamic";
 import Hero from '../components/HeroSection';
 import AIAgentsSection from '../components/AIAgentsSection';
 import Skills from '../components/Skills';
+
+const TechProjectSpace = dynamic(() => import("../components/TechProjectSpace"), { ssr: false });
 import CaseStudies from '../components/CaseStudies';
 import WorkHistory from '../components/WorkHistory';
 import HowIWork from '../components/HowIWork';
@@ -11,6 +14,7 @@ export default function Home() {
         <>
             <Hero />
             <AIAgentsSection />
+            <TechProjectSpace />
             <main role="main">
                 <Skills />
                 <CaseStudies />

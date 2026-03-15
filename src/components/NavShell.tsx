@@ -28,6 +28,13 @@ export default function NavShell({ children }: { children: React.ReactNode }) {
   const commands: Command[] = useMemo(
     () => [
       {
+        id: "explore-3d",
+        label: "Go to Explore (3D)",
+        description: "Tech stack & projects in 3D",
+        action: () => scrollToSection("explore-3d"),
+        shortcut: "G E",
+      },
+      {
         id: "case-studies",
         label: "Go to Case Studies",
         description: "Jump to recent AI and payment work",
@@ -172,6 +179,14 @@ export default function NavShell({ children }: { children: React.ReactNode }) {
             aria-label="View Upwork proof"
           >
             UW
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection("explore-3d")}
+            className="hidden md:inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-200 bg-white text-gray-700 text-xs font-semibold hover:bg-gray-50 hover:shadow-sm transition"
+            aria-label="Explore tech and projects in 3D"
+          >
+            3D
           </button>
           <button
             type="button"
