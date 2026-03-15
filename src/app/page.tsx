@@ -1,4 +1,5 @@
 import Hero from '../components/HeroSection';
+import AIAgentsSection from '../components/AIAgentsSection';
 import Skills from '../components/Skills';
 import CaseStudies from '../components/CaseStudies';
 import WorkHistory from '../components/WorkHistory';
@@ -9,6 +10,7 @@ export default function Home() {
     return (
         <>
             <Hero />
+            <AIAgentsSection />
             <main role="main">
                 <Skills />
                 <CaseStudies />

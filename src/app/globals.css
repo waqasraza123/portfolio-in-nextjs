@@ -527,3 +527,19 @@ body {
     }
   }
 
+  /* AI Agents section scene (reuses hero layout; distinct accent) */
+  .agents-scene-wrap {
+    padding: 8px 0 12px;
+  }
+  .agents-highlight {
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.2), rgba(192, 132, 252, 0.12));
+    box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.15);
+  }
+  .agents-thinking {
+    color: rgba(139, 92, 246, 0.85);
+  }
+  .agents-response-block .hero-ui-kpi-value {
+    font-size: 13px;
+    font-weight: 700;
+  }
+
