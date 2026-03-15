@@ -2,49 +2,36 @@
 
 import { useRef, useEffect, useState } from "react";
 
-const CATEGORY_THEMES = [
+const CATEGORIES = [
   {
     title: "AI & Automation",
-    gradient: "from-violet-500 to-fuchsia-500",
-    bg: "from-violet-50 to-fuchsia-50",
-    ring: "ring-violet-200",
-    iconBg: "bg-gradient-to-br from-violet-500 to-fuchsia-500",
-    pillHover: "hover:border-violet-300 hover:bg-violet-50 hover:text-violet-800",
+    accent: "bg-gradient-to-r from-violet-500 to-fuchsia-500",
+    pill: "bg-violet-500/12 text-violet-800 border-violet-200",
     icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z" />
-        <path d="M5 21l2.5-7.5L15 11l-7.5 2.5L5 21z" />
-        <path d="M19 21l-2.5-7.5L9 11l7.5-2.5L19 21z" />
       </svg>
     ),
     skills: ["OpenAI/GPT", "RAG", "Agents", "LangChain", "LangGraph", "CrewAI", "Embeddings", "Vector DB", "n8n", "Zapier"],
   },
   {
     title: "Backend",
-    gradient: "from-sky-500 to-blue-600",
-    bg: "from-sky-50 to-blue-50",
-    ring: "ring-sky-200",
-    iconBg: "bg-gradient-to-br from-sky-500 to-blue-600",
-    pillHover: "hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800",
+    accent: "bg-gradient-to-r from-sky-500 to-blue-600",
+    pill: "bg-sky-500/12 text-sky-800 border-sky-200",
     icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect width="20" height="8" x="2" y="2" rx="2" />
         <rect width="20" height="8" x="2" y="14" rx="2" />
-        <path d="M6 6h.01" />
-        <path d="M6 18h.01" />
       </svg>
     ),
     skills: ["Node.js", "Express.js", "NestJS", "Python", "FastAPI", "Serverless"],
   },
   {
     title: "Frontend",
-    gradient: "from-cyan-500 to-teal-500",
-    bg: "from-cyan-50 to-teal-50",
-    ring: "ring-cyan-200",
-    iconBg: "bg-gradient-to-br from-cyan-500 to-teal-500",
-    pillHover: "hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-800",
+    accent: "bg-gradient-to-r from-cyan-500 to-teal-500",
+    pill: "bg-cyan-500/12 text-cyan-800 border-cyan-200",
     icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect width="18" height="18" x="3" y="3" rx="2" />
         <path d="M3 9h18" />
         <path d="M9 21V9" />
@@ -54,29 +41,22 @@ const CATEGORY_THEMES = [
   },
   {
     title: "Data",
-    gradient: "from-emerald-500 to-green-600",
-    bg: "from-emerald-50 to-green-50",
-    ring: "ring-emerald-200",
-    iconBg: "bg-gradient-to-br from-emerald-500 to-green-600",
-    pillHover: "hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800",
+    accent: "bg-gradient-to-r from-emerald-500 to-green-600",
+    pill: "bg-emerald-500/12 text-emerald-800 border-emerald-200",
     icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <ellipse cx="12" cy="5" rx="9" ry="3" />
         <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-        <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
       </svg>
     ),
     skills: ["Supabase", "PostgreSQL", "Pinecone", "MongoDB", "Prisma", "Redis"],
   },
   {
     title: "Payments",
-    gradient: "from-amber-500 to-orange-500",
-    bg: "from-amber-50 to-orange-50",
-    ring: "ring-amber-200",
-    iconBg: "bg-gradient-to-br from-amber-500 to-orange-500",
-    pillHover: "hover:border-amber-300 hover:bg-amber-50 hover:text-amber-800",
+    accent: "bg-gradient-to-r from-amber-500 to-orange-500",
+    pill: "bg-amber-500/12 text-amber-800 border-amber-200",
     icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect width="20" height="14" x="2" y="5" rx="2" />
         <path d="M2 10h20" />
       </svg>
@@ -85,13 +65,10 @@ const CATEGORY_THEMES = [
   },
   {
     title: "DevOps",
-    gradient: "from-slate-600 to-indigo-600",
-    bg: "from-slate-50 to-indigo-50",
-    ring: "ring-slate-200",
-    iconBg: "bg-gradient-to-br from-slate-600 to-indigo-600",
-    pillHover: "hover:border-slate-300 hover:bg-slate-100 hover:text-slate-800",
+    accent: "bg-gradient-to-r from-slate-600 to-indigo-600",
+    pill: "bg-slate-500/12 text-slate-800 border-slate-200",
     icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
       </svg>
     ),
@@ -99,13 +76,10 @@ const CATEGORY_THEMES = [
   },
   {
     title: "Mobile",
-    gradient: "from-rose-500 to-pink-500",
-    bg: "from-rose-50 to-pink-50",
-    ring: "ring-rose-200",
-    iconBg: "bg-gradient-to-br from-rose-500 to-pink-500",
-    pillHover: "hover:border-rose-300 hover:bg-rose-50 hover:text-rose-800",
+    accent: "bg-gradient-to-r from-rose-500 to-pink-500",
+    pill: "bg-rose-500/12 text-rose-800 border-rose-200",
     icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect width="14" height="20" x="5" y="2" rx="2" />
         <path d="M12 18h.01" />
       </svg>
@@ -130,7 +104,7 @@ export default function Skills() {
       ([entry]) => {
         if (entry?.isIntersecting) setRevealed(true);
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -20px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -140,52 +114,57 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-white to-gray-50/80"
+      className="py-12 md:py-14 bg-gradient-to-b from-gray-50/80 to-white"
     >
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-3">
-          Tech Stack
-        </h2>
-        <p className="text-lg md:text-xl text-gray-600 text-center mb-14 max-w-2xl mx-auto">
-          10+ years of hands-on experience, AI-first approach
-        </p>
+      <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-6">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900">
+            Tech Stack
+          </h2>
+          <p className="text-sm text-gray-500">
+            10+ years · AI-first
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {CATEGORY_THEMES.map((cat, index) => (
-            <div
-              key={cat.title}
-              className={`
-                skill-card rounded-2xl p-6 border border-gray-200/80 bg-white
-                shadow-sm hover:shadow-xl hover:-translate-y-1
-                transition-all duration-300 ease-out
-                ${revealed ? "revealed" : "opacity-0"}
-              `}
-              style={revealed ? { animationDelay: `${index * 70}ms` } : undefined}
-            >
-              <div className={`rounded-xl p-3 w-fit bg-gradient-to-br ${cat.bg} ring-1 ${cat.ring} mb-4`}>
-                <div className={`${cat.iconBg} p-2 rounded-lg text-white shadow-sm`}>
-                  {cat.icon}
+        <div
+          className={`
+            overflow-hidden rounded-2xl border border-gray-200/90 bg-white/95 shadow-sm
+            shadow-gray-200/50
+            transition-all duration-500 ease-out
+            ${revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
+          `}
+        >
+          <div className="divide-y divide-gray-100">
+            {CATEGORIES.map((cat, index) => (
+              <div
+                key={cat.title}
+                className={`skill-strip flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 py-3 px-4 sm:py-2.5 sm:px-5 hover:bg-gray-50/70 transition-colors duration-200 ${revealed ? "skill-strip--revealed" : ""}`}
+                style={revealed ? { animationDelay: `${Math.min(index * 50, 280)}ms` } : undefined}
+              >
+                <div className="flex items-center gap-2.5 min-w-0 sm:w-40 shrink-0">
+                  <span
+                    className={`flex items-center justify-center w-8 h-8 rounded-lg shrink-0 ${cat.accent} text-white`}
+                    aria-hidden
+                  >
+                    {cat.icon}
+                  </span>
+                  <span className="text-sm font-semibold text-gray-800 truncate">
+                    {cat.title}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-1.5 sm:pl-0 pl-10">
+                  {cat.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className={`inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md border ${cat.pill}`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                {cat.title}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {cat.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className={`
-                      px-3 py-1.5 text-sm font-medium rounded-lg
-                      bg-gray-50 text-gray-700 border border-gray-200
-                      transition-all duration-200 ${cat.pillHover}
-                    `}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

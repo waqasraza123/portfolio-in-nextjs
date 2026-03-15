@@ -110,6 +110,29 @@ body {
     }
   }
 
+  /* Tech Stack: compact strip reveal */
+  @keyframes skillStripReveal {
+    from {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .skill-strip.skill-strip--revealed {
+    opacity: 0;
+    animation: skillStripReveal 0.4s ease-out forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .skill-strip.skill-strip--revealed {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   /* Case Studies: premium reveal */
   @keyframes caseCardReveal {
     from {
@@ -541,5 +564,108 @@ body {
   .agents-response-block .hero-ui-kpi-value {
     font-size: 13px;
     font-weight: 700;
+  }
+
+  /* AI Agents section layout: 3D person + pipeline */
+  .agents-section-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    .agents-section-layout {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+  }
+
+  /* 3D animated person */
+  .agents-3d-wrap {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 200px;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+  @media (min-width: 768px) {
+    .agents-3d-wrap {
+      max-width: 220px;
+      min-height: 260px;
+    }
+  }
+  .agents-3d-person {
+    position: relative;
+    width: 80px;
+    height: 180px;
+    transform-style: preserve-3d;
+  }
+  .agents-3d-head {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    margin-left: -22px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, rgba(139, 92, 246, 0.95), rgba(192, 132, 252, 0.85));
+    box-shadow:
+      0 8px 24px rgba(139, 92, 246, 0.35),
+      inset 0 -4px 12px rgba(0, 0, 0, 0.08),
+      inset 0 4px 8px rgba(255, 255, 255, 0.25);
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+  }
+  .agents-3d-body {
+    position: absolute;
+    left: 50%;
+    top: 52px;
+    width: 56px;
+    height: 88px;
+    margin-left: -28px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.85));
+    box-shadow:
+      0 12px 32px rgba(99, 102, 241, 0.3),
+      inset 0 -6px 16px rgba(0, 0, 0, 0.06),
+      inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+  }
+  .agents-3d-arm {
+    position: absolute;
+    right: -4px;
+    top: 58px;
+    width: 14px;
+    height: 52px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.9), rgba(192, 132, 252, 0.8));
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+    transform-origin: 50% 0%;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+  }
+  .agents-3d-person--right .agents-3d-arm {
+    right: auto;
+    left: -4px;
+  }
+  .agents-3d-people {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .agents-3d-person {
+      animation: none;
+    }
   }
 

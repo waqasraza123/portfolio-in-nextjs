@@ -6,6 +6,78 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* 3D animated persons: geometric figures with CSS 3D + GSAP */
+function Agents3DPerson({ variant = "left" }: { variant?: "left" | "right" }) {
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const personRef = useRef<HTMLDivElement>(null);
+  const headRef = useRef<HTMLDivElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const armRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const wrap = wrapRef.current;
+    const person = personRef.current;
+    const arm = armRef.current;
+    if (!wrap || !person || !arm) return;
+
+    const mm = gsap.matchMedia();
+    const ctx = gsap.context(() => {
+      mm.add(
+        {
+          reduce: "(prefers-reduced-motion: reduce)",
+          ok: "(prefers-reduced-motion: no-preference)",
+        },
+        (c) => {
+          const prefersReduced = c.conditions?.reduce ?? false;
+          if (prefersReduced) {
+            gsap.set(person, { rotateY: 0, rotateX: 0, y: 0 });
+            gsap.set(arm, { rotateZ: 0 });
+            return;
+          }
+          gsap.set(wrap, { perspective: 700 });
+          gsap.set(person, { transformOrigin: "50% 85%", rotateY: variant === "right" ? 180 : 0, rotateX: 4 });
+          const float = gsap.timeline({ repeat: -1, yoyo: true, ease: "sine.inOut" });
+          const delay = variant === "right" ? 0.9 : 0;
+          float.to(person, { y: -8, duration: 1.8 }, delay).to(person, { y: 0, duration: 1.8 }, 1.8 + delay);
+          const spin = gsap.timeline({ repeat: -1, ease: "none" });
+          spin.to(person, { rotateY: (variant === "right" ? 180 : 0) + 360, duration: 14 });
+          gsap.to(arm, {
+            rotateZ: variant === "left" ? -22 : 22,
+            transformOrigin: "50% 0%",
+            duration: 0.9,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+          });
+        },
+      );
+    }, wrap);
+    return () => {
+      mm.revert();
+      ctx.revert();
+    };
+  }, [variant]);
+
+  return (
+    <div ref={wrapRef} className="agents-3d-wrap" aria-hidden="true">
+      <div ref={personRef} className={`agents-3d-person agents-3d-person--${variant}`}>
+        <div ref={headRef} className="agents-3d-head" />
+        <div ref={bodyRef} className="agents-3d-body" />
+        <div ref={armRef} className="agents-3d-arm" />
+      </div>
+    </div>
+  );
+}
+
+function Agents3DPeople() {
+  return (
+    <div className="agents-3d-people">
+      <Agents3DPerson variant="left" />
+      <Agents3DPerson variant="right" />
+    </div>
+  );
+}
+
 function AgentCodeLine({ children }: { children: string }) {
   return (
     <div className="hero-code-line">
@@ -228,9 +300,12 @@ export default function AIAgentsSection() {
           AI Agents
         </h2>
         <p className="text-base md:text-lg text-gray-600 text-center mb-10 max-w-2xl mx-auto">
-          From prompt to grounded response—RAG, tools, and guardrails in one loop.
+          Orchestrated agent loops: RAG retrieval, tool-calling, citation grounding, and refusal policies in one pipeline.
         </p>
-        <AgentsScene />
+        <div className="agents-section-layout">
+          <Agents3DPeople />
+          <AgentsScene />
+        </div>
       </div>
     </section>
   );

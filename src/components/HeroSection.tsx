@@ -114,13 +114,13 @@ export default function Hero() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">
-          Senior Software Engineer (10+ Years)
+          Senior Software Engineer
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 mb-2 max-w-3xl mx-auto font-semibold">
-          Building AI Agents, automations, and production-grade apps
+          10+ Years, Building AI Agents, automations, SaaS products
         </p>
         <p className="text-lg md:text-xl text-gray-500 mb-6 max-w-2xl mx-auto">
-          Next.js, Node.js, Python
+          Generative AI, Claude, LLM, Agents, Node.js, Python
         </p>
 
         <HeroCodeToUiScene />
