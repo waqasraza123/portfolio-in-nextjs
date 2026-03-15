@@ -164,6 +164,8 @@ function SceneContent({ reducedMotion }: { reducedMotion: boolean }) {
     });
   }, []);
 
+  const tiltAngle = -0.38;
+
   return (
     <>
       <LightBackground />
@@ -172,28 +174,30 @@ function SceneContent({ reducedMotion }: { reducedMotion: boolean }) {
       <pointLight position={[4, 4, 4]} intensity={0.9} />
       <pointLight position={[-3, 2, 2]} intensity={0.4} color="#a78bfa" />
 
-      {TECH_CATEGORIES_3D.map((cat, i) => (
-        <EmojiNode
-          key={cat.id}
-          position={techPositions[i]}
-          emoji={cat.emoji}
-          label={cat.title}
-          onClick={() => scrollToSection("skills")}
-          scale={1}
-        />
-      ))}
-      {CASE_STUDIES_3D.map((proj, i) => (
-        <EmojiNode
-          key={proj.id}
-          position={projectPositions[i]}
-          emoji={proj.emoji}
-          label={proj.title}
-          onClick={() => scrollToSection("case-studies")}
-          scale={0.95}
-        />
-      ))}
+      <group rotation={[tiltAngle, 0, 0]}>
+        {TECH_CATEGORIES_3D.map((cat, i) => (
+          <EmojiNode
+            key={cat.id}
+            position={techPositions[i]}
+            emoji={cat.emoji}
+            label={cat.title}
+            onClick={() => scrollToSection("skills")}
+            scale={1}
+          />
+        ))}
+        {CASE_STUDIES_3D.map((proj, i) => (
+          <EmojiNode
+            key={proj.id}
+            position={projectPositions[i]}
+            emoji={proj.emoji}
+            label={proj.title}
+            onClick={() => scrollToSection("case-studies")}
+            scale={0.95}
+          />
+        ))}
 
-      <Avatar3D reducedMotion={reducedMotion} />
+        <Avatar3D reducedMotion={reducedMotion} />
+      </group>
     </>
   );
 }
